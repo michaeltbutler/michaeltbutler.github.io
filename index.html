@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Butler — Data Engineer & Scientist</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; }
+    a { text-decoration: none; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 0.5px solid #30363d; position: sticky; top: 0; background: #0d1117; z-index: 10; }
+    .nav-logo { font-size: 16px; font-weight: 500; color: #58a6ff; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 13px; color: #8b949e; }
+    .nav-links a:hover { color: #e6edf3; }
+
+    /* HERO */
+    .hero { padding: 4rem 2rem 3rem; max-width: 860px; margin: 0 auto; }
+    .hero-tag { font-size: 12px; color: #58a6ff; background: rgba(88,166,255,0.1); padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 1rem; border: 0.5px solid rgba(88,166,255,0.3); }
+    .hero h1 { font-size: 36px; font-weight: 500; color: #e6edf3; margin-bottom: 0.5rem; line-height: 1.2; }
+    .hero h1 span { color: #58a6ff; }
+    .hero-sub { font-size: 16px; color: #8b949e; margin-bottom: 1.5rem; line-height: 1.7; max-width: 560px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { background: #58a6ff; color: #0d1117; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; }
+    .btn-secondary { background: transparent; color: #58a6ff; padding: 10px 20px; border-radius: 8px; font-size: 14px; border: 0.5px solid #58a6ff; cursor: pointer; }
+
+    /* SECTIONS */
+    .section { padding: 2.5rem 2rem; max-width: 860px; margin: 0 auto; }
+    .section-label { font-size: 11px; color: #58a6ff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .section-title { font-size: 22px; font-weight: 500; color: #e6edf3; margin-bottom: 1.5rem; }
+    .divider { border: none; border-top: 0.5px solid #21262d; }
+
+    /* STATS */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+    .stat-card { background: #161b22; border: 0.5px solid #30363d; border-radius: 8px; padding: 1rem; }
+    .stat-num { font-size: 24px; font-weight: 500; color: #58a6ff; }
+    .stat-label { font-size: 12px; color: #8b949e; margin-top: 4px; }
+
+    /* STACK */
+    .stack-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stack-pill { display: flex; align-items: center; gap: 6px; background: #161b22; border: 0.5px solid #30363d; border-radius: 20px; padding: 6px 14px; font-size: 13px; color: #c9d1d9; }
+    .stack-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .project-card { background: #161b22; border: 0.5px solid #30363d; border-radius: 12px; padding: 1.25rem; transition: border-color 0.2s; }
+    .project-card:hover { border-color: #58a6ff; }
+    .project-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 18px; }
+    .project-title { font-size: 15px; font-weight: 500; color: #e6edf3; margin-bottom: 6px; }
+    .project-desc { font-size: 13px; color: #8b949e; line-height: 1.6; margin-bottom: 12px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 11px; padding: 3px 8px; border-radius: 4px; }
+    .project-link { display: inline-block; margin-top: 10px; font-size: 12px; color: #58a6ff; }
+
+    /* CONTACT */
+    .contact-card { background: #161b22; border: 0.5px solid #30363d; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 14px; }
+    .contact-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #c9d1d9; }
+    .contact-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(88,166,255,0.1); border: 0.5px solid rgba(88,166,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: #484f58; border-top: 0.5px solid #21262d; margin-top: 2rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      nav { padding: 1rem; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">MB.</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" id="about">
+    <span class="hero-tag">Open to opportunities</span>
+    <h1>Michael <span>Butler</span></h1>
+    <h1 style="font-size:22px; color:#8b949e; font-weight:400; margin-bottom:1rem;">Data Engineer &amp; Scientist</h1>
+    <p class="hero-sub">Self-taught data professional turning raw data into meaningful insights. Specializing in data pipelines, machine learning, and cloud-based analytics solutions.</p>
+    <div class="hero-btns">
+      <a href="#projects"><button class="btn-primary">View projects</button></a>
+      <a href="#contact"><button class="btn-secondary">Get in touch</button></a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- STATS -->
+  <div class="section">
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Projects shipped</div></div>
+      <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Tools mastered</div></div>
+      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Self-taught</div></div>
+      <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Cloud platforms</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- STACK -->
+  <div class="section" id="stack">
+    <div class="section-label">Tools &amp; technologies</div>
+    <div class="section-title">Tech stack</div>
+    <div class="stack-grid">
+      <div class="stack-pill"><div class="stack-dot" style="background:#58a6ff"></div>Power BI</div>
+      <div class="stack-pill"><div class="stack-dot" style="background:#3fb950"></div>Tableau</div>
+      <div class="stack-pill"><div class="stack-dot" style="background:#d2a679"></div>Machine Learning</div>
+      <div class="stack-pill"><div class="stack-dot" style="background:#ff7b72"></div>AWS</div>
+      <div class="stack-pill"><div class="stack-dot" style="background:#4285f4"></div>GCP</div>
+      <div class="stack-pill"><div class="stack-dot" style="background:#0089d6"></div>Azure</div>
+      <div class="stack-pill"><div class="stack-dot" style="background:#f0db4f"></div>Python</div>
+      <div class="stack-pill"><div class="stack-dot" style="background:#336791"></div>SQL</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PROJECTS -->
+  <div class="section" id="projects">
+    <div class="section-label">Work</div>
+    <div class="section-title">Projects</div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(88,166,255,0.1);">📊</div>
+        <div class="project-title">Sales analytics dashboard</div>
+        <div class="project-desc">Interactive dashboard tracking KPIs, revenue trends, and regional performance using Power BI and AWS.</div>
+        <div class="project-tags">
+          <span class="tag" style="background:rgba(88,166,255,0.1);color:#58a6ff;">Power BI</span>
+          <span class="tag" style="background:rgba(255,123,114,0.1);color:#ff7b72;">AWS</span>
+          <span class="tag" style="background:rgba(240,219,79,0.1);color:#c9b530;">Python</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(63,185,80,0.1);">🤖</div>
+        <div class="project-title">Churn prediction model</div>
+        <div class="project-desc">ML model predicting customer churn with 89% accuracy using classification algorithms in Python.</div>
+        <div class="project-tags">
+          <span class="tag" style="background:rgba(210,166,121,0.1);color:#d2a679;">ML</span>
+          <span class="tag" style="background:rgba(240,219,79,0.1);color:#c9b530;">Python</span>
+          <span class="tag" style="background:rgba(66,133,244,0.1);color:#4285f4;">GCP</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(210,166,121,0.1);">⚙️</div>
+        <div class="project-title">ETL data pipeline</div>
+        <div class="project-desc">Automated pipeline ingesting and transforming 10M+ records daily on GCP using Python.</div>
+        <div class="project-tags">
+          <span class="tag" style="background:rgba(66,133,244,0.1);color:#4285f4;">GCP</span>
+          <span class="tag" style="background:rgba(240,219,79,0.1);color:#c9b530;">Python</span>
+          <span class="tag" style="background:rgba(51,103,145,0.2);color:#58a6ff;">SQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(63,185,80,0.1);">🌍</div>
+        <div class="project-title">Excursion</div>
+        <div class="project-desc">A travel landing page built with HTML and CSS showcasing front-end fundamentals.</div>
+        <div class="project-tags">
+          <span class="tag" style="background:rgba(63,185,80,0.1);color:#3fb950;">HTML</span>
+          <span class="tag" style="background:rgba(88,166,255,0.1);color:#58a6ff;">CSS</span>
+        </div>
+        <a class="project-link" href="./excursion">View project →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-label">Let's connect</div>
+    <div class="section-title">Contact</div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <a href="mailto:michael@thebutlercreative.com" style="color:#c9d1d9;">michael@thebutlercreative.com</a>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77A5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <a href="https://github.com/michaeltbutler" target="_blank" style="color:#c9d1d9;">github.com/michaeltbutler</a>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <a href="https://linkedin.com/in/michaeltbutler" target="_blank" style="color:#c9d1d9;">linkedin.com/in/michaeltbutler</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2026 Michael Butler · thebutlercreative.com</footer>
+
+</body>
+</html>
