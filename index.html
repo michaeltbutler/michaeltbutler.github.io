@@ -1,211 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Butler — Data Engineer & Scientist</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; }
-    a { text-decoration: none; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Michael T Butler | AI/ML Engineer &amp; Health Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--slate:#0f172a;--panel:#1e293b;--line:#334155;--ink:#e2e8f0;--muted:#94a3b8;--sky:#38bdf8;--tile:#0ea5e9;--blue:#0369a1;--paper:#f1f5f9;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--slate);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;margin:0;line-height:1.05}
+a{color:var(--sky);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--slate);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 16px}
+nav b{font-family:'Space Grotesk',sans-serif;color:#f1f5f9}
+nav div{display:flex;gap:4px}
+nav a{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:56px;min-height:48px;justify-content:center;padding:4px 8px;border-radius:10px;font-size:12px;color:var(--muted)}
+nav a:hover{text-decoration:none;color:var(--ink)}nav a[aria-current]{background:var(--panel);color:var(--sky)}
+.page{min-height:calc(100vh - 72px);padding:64px 24px;display:flex;flex-direction:column}
+.in{max-width:1080px;width:100%;margin:0 auto;flex:1}
+h2{font-size:clamp(36px,6vw,56px);margin-bottom:40px}
+.pager{max-width:1080px;width:100%;margin:48px auto 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--tile);color:var(--slate);padding:12px 24px;border-radius:10px;font-weight:600}.btn:hover{text-decoration:none;opacity:.9}
+.cover{position:relative;overflow:hidden;min-height:100vh;justify-content:center}
+.cover:before{content:"";position:absolute;right:0;top:0;bottom:0;width:min(300px,24%);background:var(--panel)}
+.cover .in{position:relative;z-index:1;flex:0}
+.eyebrow{margin:0 0 20px;color:var(--sky);font-weight:600;letter-spacing:.2em;font-size:15px}
+.cover h1{font-size:clamp(48px,9vw,96px);color:#f1f5f9}
+.sub{font-size:clamp(20px,3vw,30px);color:var(--muted);margin:20px 0 8px}
+.tag{color:var(--muted);margin:0 0 40px}
+.doors{display:grid;grid-template-columns:repeat(4,minmax(0,150px));gap:16px}
+.door{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--ink);font-weight:600}
+.door:hover{text-decoration:none;border-color:var(--sky);transform:translateY(-3px)}
+.dico{width:72px;height:72px;background:var(--tile);color:var(--slate);border-radius:18px;display:flex;align-items:center;justify-content:center}
+.about{background:var(--paper);color:var(--slate)}
+.abt{display:grid;grid-template-columns:300px 1fr;gap:48px}
+.photo{min-height:300px;background:var(--panel);border-radius:20px;display:flex;align-items:center;justify-content:center;color:var(--sky);font-weight:600;text-align:center;padding:16px}
+.lead{font-size:clamp(20px,2.6vw,28px);line-height:1.4;margin:0 0 28px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stat{background:#fff;border:1px solid #cbd5e1;border-radius:14px;padding:24px}.stat h3{font-size:44px;color:var(--blue)}.stat p{margin:0;color:#475569}
+.about .pager a:not(.btn){color:var(--blue)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.skill{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;font-weight:500}
+.ico{width:64px;height:64px;background:var(--tile);color:var(--slate);border-radius:16px;display:flex;align-items:center;justify-content:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.pcard{background:var(--panel);border-top:5px solid var(--sky);border-radius:14px;padding:28px}
+.pcard h3{font-size:28px;color:#f1f5f9;margin-bottom:12px}.pcard p{margin:0;color:var(--muted)}
+.contact{background:var(--blue);color:#f0f9ff}.contact h2{font-size:clamp(40px,7vw,72px);margin-bottom:24px}.contact p{font-size:20px;margin:0;color:#e0f2fe}
+.contact .pager a:not(.btn){color:#fff}
+@media(max-width:760px){.abt{grid-template-columns:1fr}.photo{min-height:200px;max-width:240px}.stats{grid-template-columns:1fr}.cover:before{display:none}.doors{grid-template-columns:repeat(2,1fr)}nav b{display:none}nav{justify-content:center}}
 
-    /* NAV */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 0.5px solid #30363d; position: sticky; top: 0; background: #0d1117; z-index: 10; }
-    .nav-logo { font-size: 16px; font-weight: 500; color: #58a6ff; }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { font-size: 13px; color: #8b949e; }
-    .nav-links a:hover { color: #e6edf3; }
-
-    /* HERO */
-    .hero { padding: 4rem 2rem 3rem; max-width: 860px; margin: 0 auto; }
-    .hero-tag { font-size: 12px; color: #58a6ff; background: rgba(88,166,255,0.1); padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 1rem; border: 0.5px solid rgba(88,166,255,0.3); }
-    .hero h1 { font-size: 36px; font-weight: 500; color: #e6edf3; margin-bottom: 0.5rem; line-height: 1.2; }
-    .hero h1 span { color: #58a6ff; }
-    .hero-sub { font-size: 16px; color: #8b949e; margin-bottom: 1.5rem; line-height: 1.7; max-width: 560px; }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary { background: #58a6ff; color: #0d1117; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; }
-    .btn-secondary { background: transparent; color: #58a6ff; padding: 10px 20px; border-radius: 8px; font-size: 14px; border: 0.5px solid #58a6ff; cursor: pointer; }
-
-    /* SECTIONS */
-    .section { padding: 2.5rem 2rem; max-width: 860px; margin: 0 auto; }
-    .section-label { font-size: 11px; color: #58a6ff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-    .section-title { font-size: 22px; font-weight: 500; color: #e6edf3; margin-bottom: 1.5rem; }
-    .divider { border: none; border-top: 0.5px solid #21262d; }
-
-    /* STATS */
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
-    .stat-card { background: #161b22; border: 0.5px solid #30363d; border-radius: 8px; padding: 1rem; }
-    .stat-num { font-size: 24px; font-weight: 500; color: #58a6ff; }
-    .stat-label { font-size: 12px; color: #8b949e; margin-top: 4px; }
-
-    /* STACK */
-    .stack-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-    .stack-pill { display: flex; align-items: center; gap: 6px; background: #161b22; border: 0.5px solid #30363d; border-radius: 20px; padding: 6px 14px; font-size: 13px; color: #c9d1d9; }
-    .stack-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-
-    /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-    .project-card { background: #161b22; border: 0.5px solid #30363d; border-radius: 12px; padding: 1.25rem; transition: border-color 0.2s; }
-    .project-card:hover { border-color: #58a6ff; }
-    .project-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 18px; }
-    .project-title { font-size: 15px; font-weight: 500; color: #e6edf3; margin-bottom: 6px; }
-    .project-desc { font-size: 13px; color: #8b949e; line-height: 1.6; margin-bottom: 12px; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag { font-size: 11px; padding: 3px 8px; border-radius: 4px; }
-    .project-link { display: inline-block; margin-top: 10px; font-size: 12px; color: #58a6ff; }
-
-    /* CONTACT */
-    .contact-card { background: #161b22; border: 0.5px solid #30363d; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 14px; }
-    .contact-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #c9d1d9; }
-    .contact-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(88,166,255,0.1); border: 0.5px solid rgba(88,166,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-
-    /* FOOTER */
-    footer { text-align: center; padding: 2rem; font-size: 12px; color: #484f58; border-top: 0.5px solid #21262d; margin-top: 2rem; }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 28px; }
-      nav { padding: 1rem; }
-      .nav-links { gap: 1rem; }
-    }
-  </style>
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pageIn{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shine{to{background-position:200% center}}
+@keyframes blink{50%{opacity:0}}
+@keyframes drift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.page:not([hidden]){animation:pageIn .5s cubic-bezier(.2,.7,.2,1) both}
+.rv{opacity:0;animation:fadeUp .65s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*70ms);opacity:1}
+#net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.cover h1{background:linear-gradient(90deg,#f1f5f9 0%,#38bdf8 25%,#f1f5f9 50%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+.cover:after{content:"";position:absolute;right:calc(min(300px,24%)/2 - 70px);top:50%;margin-top:-70px;width:140px;height:140px;border:4px dashed var(--sky);border-radius:50%;animation:spin 18s linear infinite}
+.caret{display:inline-block;width:3px;height:1em;background:var(--sky);margin-left:4px;vertical-align:-.12em;animation:blink 1s steps(2) infinite}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.door,.skill,.pcard,.stat{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.door:hover{box-shadow:0 12px 28px rgba(14,165,233,.25)}
+.skill:hover,.pcard:hover,.stat:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(2,6,23,.35)}
+.dico,.ico{animation:bob 3.6s ease-in-out infinite}
+.door:nth-child(2) .dico,.skill:nth-child(2n) .ico{animation-delay:.5s}.door:nth-child(3) .dico,.skill:nth-child(3n) .ico{animation-delay:1s}.door:nth-child(4) .dico,.skill:nth-child(4n) .ico{animation-delay:1.5s}
+.skill:hover .ico,.door:hover .dico{transform:rotate(-8deg) scale(1.12);transition:transform .25s ease}
+.contact{background:linear-gradient(120deg,#0369a1,#0c4a6e,#0369a1);background-size:220% 220%;animation:drift 10s ease-in-out infinite}
+.btn{transition:transform .2s ease,box-shadow .2s ease}.btn:hover{transform:translateX(4px);box-shadow:0 8px 20px rgba(14,165,233,.35)}
+@media(max-width:760px){.cover:after{display:none}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
 </head>
-<body>
-
-  <nav>
-    <span class="nav-logo">MB.</span>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#stack">Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero" id="about">
-    <span class="hero-tag">Open to opportunities</span>
-    <h1>Michael <span>Butler</span></h1>
-    <h1 style="font-size:22px; color:#8b949e; font-weight:400; margin-bottom:1rem;">Data Engineer &amp; Scientist</h1>
-    <p class="hero-sub">Self-taught data professional turning raw data into meaningful insights. Specializing in data pipelines, machine learning, and cloud-based analytics solutions.</p>
-    <div class="hero-btns">
-      <a href="#projects"><button class="btn-primary">View projects</button></a>
-      <a href="#contact"><button class="btn-secondary">Get in touch</button></a>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- STATS -->
-  <div class="section">
-    <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Projects shipped</div></div>
-      <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Tools mastered</div></div>
-      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Self-taught</div></div>
-      <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Cloud platforms</div></div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- STACK -->
-  <div class="section" id="stack">
-    <div class="section-label">Tools &amp; technologies</div>
-    <div class="section-title">Tech stack</div>
-    <div class="stack-grid">
-      <div class="stack-pill"><div class="stack-dot" style="background:#58a6ff"></div>Power BI</div>
-      <div class="stack-pill"><div class="stack-dot" style="background:#3fb950"></div>Tableau</div>
-      <div class="stack-pill"><div class="stack-dot" style="background:#d2a679"></div>Machine Learning</div>
-      <div class="stack-pill"><div class="stack-dot" style="background:#ff7b72"></div>AWS</div>
-      <div class="stack-pill"><div class="stack-dot" style="background:#f0db4f"></div>Python</div>
-      <div class="stack-pill"><div class="stack-dot" style="background:#336791"></div>SQL</div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- PROJECTS -->
-  <div class="section" id="projects">
-    <div class="section-label">Work</div>
-    <div class="section-title">Projects</div>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-icon" style="background:rgba(88,166,255,0.1);">📊</div>
-        <div class="project-title">Sales analytics dashboard</div>
-        <div class="project-desc">Interactive dashboard tracking KPIs, revenue trends, and regional performance using Power BI and AWS.</div>
-        <div class="project-tags">
-          <span class="tag" style="background:rgba(88,166,255,0.1);color:#58a6ff;">Power BI</span>
-          <span class="tag" style="background:rgba(255,123,114,0.1);color:#ff7b72;">AWS</span>
-          <span class="tag" style="background:rgba(240,219,79,0.1);color:#c9b530;">Python</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon" style="background:rgba(63,185,80,0.1);">🤖</div>
-        <div class="project-title">Churn prediction model</div>
-        <div class="project-desc">ML model predicting customer churn with 89% accuracy using classification algorithms in Python.</div>
-        <div class="project-tags">
-          <span class="tag" style="background:rgba(210,166,121,0.1);color:#d2a679;">ML</span>
-          <span class="tag" style="background:rgba(240,219,79,0.1);color:#c9b530;">Python</span>
-          <span class="tag" style="background:rgba(66,133,244,0.1);color:#4285f4;">GCP</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon" style="background:rgba(210,166,121,0.1);">⚙️</div>
-        <div class="project-title">ETL data pipeline</div>
-        <div class="project-desc">Automated pipeline ingesting and transforming 10M+ records daily on GCP using Python.</div>
-        <div class="project-tags">
-          <span class="tag" style="background:rgba(66,133,244,0.1);color:#4285f4;">GCP</span>
-          <span class="tag" style="background:rgba(240,219,79,0.1);color:#c9b530;">Python</span>
-          <span class="tag" style="background:rgba(51,103,145,0.2);color:#58a6ff;">SQL</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon" style="background:rgba(63,185,80,0.1);">🌍</div>
-        <div class="project-title">Excursion</div>
-        <div class="project-desc">A travel landing page built with HTML and CSS showcasing front-end fundamentals.</div>
-        <div class="project-tags">
-          <span class="tag" style="background:rgba(63,185,80,0.1);color:#3fb950;">HTML</span>
-          <span class="tag" style="background:rgba(88,166,255,0.1);color:#58a6ff;">CSS</span>
-        </div>
-        <a class="project-link" href="./excursion">View project →</a>
-      </div>
-
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- CONTACT -->
-  <div class="section" id="contact">
-    <div class="section-label">Let's connect</div>
-    <div class="section-title">Contact</div>
-    <div class="contact-card">
-      <div class="contact-row">
-        <div class="contact-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <a href="mailto:michael@thebutlercreative.com" style="color:#c9d1d9;">michael@thebutlercreative.com</a>
-      </div>
-      <div class="contact-row">
-        <div class="contact-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77A5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </div>
-        <a href="https://github.com/michaeltbutler" target="_blank" style="color:#c9d1d9;">github.com/michaeltbutler</a>
-      </div>
-      <div class="contact-row">
-        <div class="contact-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </div>
-        <a href="https://linkedin.com/in/michaeltbutler" target="_blank" style="color:#c9d1d9;">linkedin.com/in/michaeltbutler</a>
-      </div>
-    </div>
-  </div>
-
-  <footer>© 2026 Michael Butler · thebutlercreative.com</footer>
-
+<body><nav id="nav" hidden aria-label="Pages"><b>Michael T Butler</b><div><a href="#cover"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Home</a><a href="#about"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>About</a><a href="#skills"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>Skills</a><a href="#projects"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3z"/></svg>Projects</a><a href="#contact"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a></div></nav>
+<main>
+<section class="page cover" id="v-cover"><canvas id="net" aria-hidden="true"></canvas><div class="in"><p class="eyebrow">PORTFOLIO 2026</p><h1>Michael T Butler</h1><p class="sub"><span class="sr">AI / ML Engineer &amp; Health Manager</span><span id="typed" aria-hidden="true"></span><span class="caret" aria-hidden="true"></span></p><p class="tag">Building intelligent systems for better healthcare. Choose a page to explore.</p><div class="doors"><a class="door" href="#about"><span class="dico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><span>About</span></a><a class="door" href="#skills"><span class="dico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><span>Skills</span></a><a class="door" href="#projects"><span class="dico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3z"/></svg></span><span>Projects</span></a><a class="door" href="#contact"><span class="dico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span>Contact</span></a></div></div></section>
+<section class="page about" id="v-about" hidden><div class="in"><h2 tabindex="-1">About Me</h2><div class="abt"><div class="photo">[Add your photo]</div><div><p class="lead">I combine machine learning with healthcare management to turn data into better patient outcomes. [Edit: your mission.]</p><div class="stats"><div class="stat"><h3>[3+]</h3><p>Years of experience</p></div><div class="stat"><h3>[5]</h3><p>Projects shipped</p></div><div class="stat"><h3>[2]</h3><p>Certifications</p></div></div></div></div></div><div class="pager"><a href="#cover">← Cover</a><a class="btn" href="#skills">Skills →</a></div></section>
+<section class="page" id="v-skills" hidden><div class="in"><h2 tabindex="-1">Technical Skills</h2><div class="grid">
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/></svg></div>Python</div>
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>PyTorch / TensorFlow</div>
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>SQL</div>
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4M4 20h16M8 16v-5M13 16V8M18 16v-3"/></svg></div>Scikit-learn</div>
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></div>NLP / LLMs</div>
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12L5 17M12 12l7 5"/></svg></div>Neural Networks</div>
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1A4.5 4.5 0 0117 18z"/></svg></div>Cloud &amp; MLOps</div>
+<div class="skill"><div class="ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></div>Health Data</div>
+</div></div><div class="pager"><a href="#about">← About</a><a class="btn" href="#projects">Projects →</a></div></section>
+<section class="page" id="v-projects" hidden><div class="in"><h2 tabindex="-1">Selected Projects</h2><div class="cards"><div class="pcard"><h3>[Project One]</h3><p>[Problem, approach, result, e.g. readmission risk model.]</p></div><div class="pcard"><h3>[Project Two]</h3><p>[Problem, approach, result, e.g. clinical notes NLP.]</p></div><div class="pcard"><h3>[Project Three]</h3><p>[Problem, approach, result, e.g. operations dashboard.]</p></div></div></div><div class="pager"><a href="#skills">← Skills</a><a class="btn" href="#contact">Contact →</a></div></section>
+<section class="page contact" id="v-contact" hidden><div class="in"><h2 tabindex="-1">Let’s build something together</h2><p>[you@email.com] · [linkedin.com/in/yourname] · [github.com/yourname]</p></div><div class="pager"><a href="#projects">← Projects</a><a class="btn" href="#cover">Back to cover →</a></div></section>
+</main>
+<script>
+(function(){
+var views=['cover','about','skills','projects','contact'];
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var sel='.eyebrow,h1,.sub,.tag,.door,h2,.photo,.lead,.stat,.skill,.pcard,.contact p,.pager';
+var typed=document.getElementById('typed'),roles=['AI Engineer','ML Engineer','Health Manager'],ri=0,ci=0,del=false,tt;
+function type(){var w=roles[ri],d=del?45:95;ci+=del?-1:1;typed.textContent=w.slice(0,ci);
+if(!del&&ci===w.length){del=true;d=1500;}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=350;}
+tt=setTimeout(type,d);}
+var cv=document.getElementById('net'),cx=cv.getContext('2d'),nodes=[],raf,W=0,H=0,mx=-999,my=-999;
+function size(){var r=cv.parentNode.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);
+var n=Math.round(Math.min(70,W*H/16000));nodes=[];for(var i=0;i<n;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.45,vy:(Math.random()-.5)*.45});}
+function draw(){cx.clearRect(0,0,W,H);var i,j,a,b,dx,dy,d;
+for(i=0;i<nodes.length;i++){a=nodes[i];if(!reduce){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;}}
+for(i=0;i<nodes.length;i++){a=nodes[i];
+for(j=i+1;j<nodes.length;j++){b=nodes[j];dx=a.x-b.x;dy=a.y-b.y;d=Math.sqrt(dx*dx+dy*dy);
+if(d<130){cx.strokeStyle='rgba(56,189,248,'+(0.35*(1-d/130))+')';cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();}}
+dx=a.x-mx;dy=a.y-my;d=Math.sqrt(dx*dx+dy*dy);
+if(d<170){cx.strokeStyle='rgba(56,189,248,'+(0.7*(1-d/170))+')';cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(mx,my);cx.stroke();}
+cx.fillStyle='rgba(56,189,248,.85)';cx.beginPath();cx.arc(a.x,a.y,2,0,6.2832);cx.fill();}
+if(!reduce)raf=requestAnimationFrame(draw);}
+var cover=document.getElementById('v-cover');
+cover.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+cover.addEventListener('mouseleave',function(){mx=my=-999;});
+function reveal(v){var els=document.querySelectorAll('#v-'+v+' '+sel);
+els.forEach(function(e,i){e.classList.remove('rv');e.style.setProperty('--i',i);});
+void document.body.offsetWidth;els.forEach(function(e){e.classList.add('rv');});}
+function count(v){if(reduce)return;document.querySelectorAll('#v-'+v+' .stat h3').forEach(function(h){
+h.dataset.o=h.dataset.o||h.textContent;var m=h.dataset.o.match(/^(\D*)(\d+)(.*)$/);if(!m)return;var end=+m[2],t0=null;
+function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);h.textContent=m[1]+Math.round(end*(1-Math.pow(1-p,3)))+m[3];if(p<1)requestAnimationFrame(step);}
+requestAnimationFrame(step);});}
+function show(){
+var h=location.hash.slice(1);if(views.indexOf(h)<0)h='cover';
+views.forEach(function(v){document.getElementById('v-'+v).hidden=(v!==h);});
+document.getElementById('nav').hidden=(h==='cover');
+document.querySelectorAll('nav a').forEach(function(a){if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+window.scrollTo(0,0);
+cancelAnimationFrame(raf);clearTimeout(tt);
+if(h==='cover'){size();ri=0;ci=0;del=false;if(reduce){typed.textContent='AI / ML Engineer & Health Manager';}else{type();}draw();}
+reveal(h);if(h==='about')count(h);
+var t=document.querySelector('#v-'+h+' h2');if(t&&t.focus)t.focus({preventScroll:true});}
+window.addEventListener('hashchange',show);
+window.addEventListener('resize',function(){if(!cover.hidden)size();});
+show();
+})();
+</script>
 </body>
 </html>
